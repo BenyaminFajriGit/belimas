@@ -8,6 +8,7 @@ class C_Product extends CI_Controller
         parent::__construct();
         if ($this->session->userdata('username')) {
             $this->load->model('Model_Product');
+            $this->load->model('Model_Order');
         } else {
             $this->session->set_flashdata('error', "Please Login First!");
             redirect('C_User/login');
@@ -155,8 +156,13 @@ class C_Product extends CI_Controller
     public function deleteProduct($id)
     {
         $this->checkAdmin();
-        $this->Model_Product->delete($id);
-        $this->session->set_flashdata('success', 'Product is Successfully Deleted');
+        if(count($this->Model_Order->getProduct($id))<1){
+            $this->Model_Product->delete($id);
+            $this->session->set_flashdata('success', 'Product is Successfully Deleted');
+        }else{
+            $this->session->set_flashdata('error', 'Cannot deleted! Product is already inputed in invoice');
+        }
+        
         redirect('C_Product/');
     }
 

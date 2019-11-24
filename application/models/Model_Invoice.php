@@ -82,7 +82,7 @@ class Model_Invoice extends CI_Model
     {
         $config['upload_path'] = './upload/payment/';
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
-        $config['file_name'] = $id_invoice;
+        $config['file_name'] = "$id_invoice".uniqid();
         $config['overwrite'] = true;
         $config['max_size'] = 1024;
         //$config['max_width']=1024;

@@ -118,7 +118,6 @@ public function loginProcess(){
                             redirect('C_Product/');break;
                     case 'member':
                             redirect('C_Product/listForCostumer');break;
-                    default: break;
                 }
         }
         else{

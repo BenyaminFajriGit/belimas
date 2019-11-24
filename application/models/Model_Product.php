@@ -63,7 +63,7 @@ class Model_Product extends CI_Model
     private function _uploadImage(){
         $config['upload_path']='./upload/product/';
         $config['allowed_types']= 'gif|jpg|png|jpeg';
-        $config['file_name']=$this->id_product;
+        $config['file_name']="$this->id_product".uniqid();
         $config['overwrite']=true;
         $config['max_size']=1024;
         //$config['max_width']=1024;

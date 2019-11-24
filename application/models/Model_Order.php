@@ -38,6 +38,10 @@ class Model_Order extends CI_Model
         return $this->db->select('*')->from($this->_table)->join($this->_table_product, 'product.id_product = orders.id_product')->where(array('id_invoice'=>$id_invoice))->get()->result();
         
     }
+
+    public function getProduct($search){
+        return  $this->db->like("id_product",$search)->get($this->_table)->result();
+    }
     
     
 }
