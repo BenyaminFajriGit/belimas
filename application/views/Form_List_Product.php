@@ -15,11 +15,13 @@
         <?php
         $this->load->view('admin/_partials/sidebar.php');
         ?>
+         
         <div id="content-wrapper">
             <div class="container-fluid">
                 <?php
                 $this->load->view('admin/_partials/breadcrumb.php');
                 ?>
+               
                 <!-- DataTable-->
                 <div class="card mb-3">
                    

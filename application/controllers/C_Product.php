@@ -147,7 +147,7 @@ class C_Product extends CI_Controller
             
         } else {
             $this->session->set_flashdata('error', 'Input Should Follow Rules!'. validation_errors());
-            redirect('C_Product/edit/');
+            redirect('C_Product/edit/'.$id);
         }
         redirect('C_Product/');
     }
