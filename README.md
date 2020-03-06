@@ -1,1 +1,2 @@
-# belimas
+# Belimas
+# Projek kuliah menggunakan Codeigniter 
